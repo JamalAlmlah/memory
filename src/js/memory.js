@@ -5,7 +5,11 @@
 // TODO: Det ska enkelt gå att ladda in flera spel, genom att anropa en funktion flera gånger. */
 // TODO: När spelet är slut ska sekunder sluta räknas*/
 // TODO: En enklare dokumentation i README.md som ska vara skriven i markup språket Markdown. Bör innehålla kortare information om vad som ligger i respektive fil samt vilka kommandon som ska köras för att starta utvecklingsserver samt hur man bygger en build.*/
+
 const turnBrick = (bricks, img) => {
+  if (bricks.second !=== null){
+    return;
+  }
   if (bricks.first === null) {
     bricks.first = img;
   } else {
