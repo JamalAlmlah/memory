@@ -7,7 +7,7 @@
 // TODO: En enklare dokumentation i README.md som ska vara skriven i markup språket Markdown. Bör innehålla kortare information om vad som ligger i respektive fil samt vilka kommandon som ska köras för att starta utvecklingsserver samt hur man bygger en build.*/
 
 const turnBrick = (bricks, img) => {
-  if (bricks.second !=== null){
+  if (bricks.second !== null) {
     return;
   }
   if (bricks.first === null) {
@@ -15,7 +15,11 @@ const turnBrick = (bricks, img) => {
   } else {
     bricks.second = img;
 
-    if (bricks.first.getAttribute('src') === bricks.second.getAttribute('src')) {
+    if (
+      bricks.first.getAttribute('src') === bricks.second.getAttribute('src') &&
+      bricks.first.getAttribute('data-index-number') !==
+        bricks.second.getAttribute('data-index-number')
+    ) {
       const removeBrick = () => {
         bricks.first.parentElement.classList.add('hidden');
         bricks.second.parentElement.classList.add('hidden');
@@ -61,6 +65,7 @@ const renderMemory = (containerId, bricks) => {
 
     const brick = document.importNode(templateDiv.firstElementChild, true);
     brick.addEventListener('click', handleClick);
+    brick.firstElementChild.setAttribute('data-index-number', i);
     div.appendChild(brick);
   }
 };
