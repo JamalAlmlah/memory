@@ -23,3 +23,11 @@ flex-wrap: wrap;
 
   visibility: hidden;
 }
+#header {
+
+  width: 100%;
+}
+#header h1 {
+text-align: center;
+
+}
